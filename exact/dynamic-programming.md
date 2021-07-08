@@ -12,7 +12,7 @@ Given a directed graph which has no negative weight arc, find the shortest path 
 
 So, we denote  $D_k(j)$ = the length of shortest path from $s$ to $j$, containing at most $k$ arcs, then the recursive equation is:
 $$
-D_k(j) = \min \left\{ D_{k-1}(j), \min_{i\in V\setminus \left\{j\right\}} \left\{D_{k-1}(i) + c_{ij}\right\}\right\}
+D_k(j) = \min \left\{ D_{k-1}\(j\), \min_{i\in V\setminus \left\{j\right\}} \left\{D_{k-1}(i) + c_{ij}\right\}\right\}
 $$
 A simple demo written in C++ has been shown as below:
 
