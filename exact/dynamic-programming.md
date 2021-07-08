@@ -83,20 +83,20 @@ public:
 
 The 0-1 knapsack problem can be modeled as:
 $$
-f^* = \max \left\{\pmb{c}^T\pmb{x}\Big| \pmb{a}^T\pmb{x} \leq \pmb{b}, \pmb{x} \in \left\{0,1\right\}^n \right\}
+f^* = \max \left\\{\pmb{c}^T\pmb{x}\Big| \pmb{a}^T\pmb{x} \leq \pmb{b}, \pmb{x} \in \left\{0,1\right\}^n \right\\}
 $$
 Define $1 \leq k \leq n$ as **stages**, $0 \leq \lambda \leq b$ as **states**. Then, the optimal value function:
 $$
-f_k(\lambda) = \max \left\{\sum_{j=1}^k c_jx_j \Big| \sum_{j=1}^k a_jx_j \leq \lambda, \pmb{x} \in \left\{0,1 \right\}^n\right\}
+f_k(\lambda) = \max \left\\{\sum_{j=1}^k c_jx_j \Big| \sum_{j=1}^k a_jx_j \leq \lambda, \pmb{x} \in \left\{0,1 \right\}^n\right\\}
 $$
 And readily, $f^* =f_n(b)$. So, the recursive equation is:
 $$
-f_k(\lambda) = \max \left\{f_{k-1}(\lambda), c_k + f_{k-1}(\lambda-a_k)\right\}
+f_k(\lambda) = \max \left\\{f_{k-1}(\lambda), c_k + f_{k-1}(\lambda-a_k)\right\\}
 $$
 And initial conditions are
 $$
 \begin{align}
-f_0(\lambda) = 0, f_1(\lambda) = \left\{ \begin{aligned}&0, && 0 \leq \lambda < a_1 \\ &\max\{c_1, 0\}, && \lambda \geq a_1 \end{aligned} \right.
+f_0(\lambda) = 0, f_1(\lambda) = \left\\{ \begin{aligned}&0, && 0 \leq \lambda < a_1 \\ &\max\{c_1, 0\}, && \lambda \geq a_1 \end{aligned} \right.
 \end{align}
 $$
 A simple demo written in C++ is shown as below:
@@ -135,15 +135,15 @@ public:
 
 The integer knaspack problem can be modeled as:
 $$
-f^* = \max \left\{\pmb{c}^T\pmb{x}\Big| \pmb{a}^T\pmb{x} \leq \pmb{b}, \pmb{x} \in \mathbb{Z}_+^n \right\}
+f^* = \max \left\\{\pmb{c}^T\pmb{x}\Big| \pmb{a}^T\pmb{x} \leq \pmb{b}, \pmb{x} \in \mathbb{Z}_+^n \right\\}
 $$
 where $c_j > 0, a_j > 0, j = 1, ..., n$. The optimal optimal value function:
 $$
-g_r(\lambda) = \max \left\{\sum_{j=1}^k c_jx_j \Big| \sum_{j=1}^k a_jx_j \leq \lambda, \pmb{x} \in \mathbb{Z}_+^n\right\}
+g_r(\lambda) = \max \left\\{\sum_{j=1}^k c_jx_j \Big| \sum_{j=1}^k a_jx_j \leq \lambda, \pmb{x} \in \mathbb{Z}_+^n\right\\}
 $$
 And readily, $f^* = g_n(b)$. So, the recursive equation is:
 $$
-g_r(\lambda) = \max_{t = 0,1, ..., \lfloor \lambda / a_r\rfloor} \left\{c_rt + g_{r-1}(\lambda - a_rt\right\}
+g_r(\lambda) = \max_{t = 0,1, ..., \lfloor \lambda / a_r\rfloor} \left\\{c_rt + g_{r-1}(\lambda - a_rt\right\\}
 $$
 However, in this way, the time compelxity could be $O(nb^2)$. Noticed that, 
 $$
@@ -154,7 +154,7 @@ $$
 $$
 So, the better recursive equation is:
 $$
-g_r(\lambda) = \max \left\{g_{r-1}(\lambda),\ g_r(\lambda-a_r)+c_r\right\}
+g_r(\lambda) = \max \left\\{g_{r-1}(\lambda),\ g_r(\lambda-a_r)+c_r\right\\}
 $$
 And the time cpmlexity is $O(nb)$.
 
