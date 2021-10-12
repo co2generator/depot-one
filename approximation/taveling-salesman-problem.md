@@ -23,37 +23,37 @@ The following is a famous approximation algorithm of Metric TSP, which is a *2-a
 
 > **Proof 1**:  Denote the optimal Hamiltonian cycle $C$ as $c$ and the length as $l$. Delete one edge of $c$, then, 
 > $$
-> 	\begin{equation}
+> \begin{equation}
 > 		l^\prime \leq l 
 > 	\end{equation}
 > $$
-> As a matter of fact, we obtain a spanning tree $T^\prime$ of $G$. Obviously, the total weight of $T^\prime$ is larger than $T$,
+> As a matter of fact, we obtain a spanning tree $T^\prime$ of $G$ after we delte one edge. Obviously, the total weight of $T^\prime$ is larger than the minimum spanning tree $T$,
 > $$
 > \begin{equation}
-> 		W(T^\prime) \geq W(T) 
+> 		W(T^\prime) \leq W(T) 
 > 	\end{equation}
 > $$
 > Therefore,
 > $$
 > \begin{equation}
-> l \geq l ^\prime = W(T^\prime) \geq W(T)		
+> l\geq l ^\prime = W(T^\prime) \geq W(T)		
 > 	\end{equation}
 > $$
-> Therefore, the length or Euler circuit $l_e$,
+> Therefore, the length of Euler circuit $l_e$,
 > $$
 > \begin{equation}
-> 		l_e \leq 2OPT(I)
+> 		l_e = 2W(T) \leq 2l = 2OPT(I)
 > 	\end{equation}
 > $$
 > Since,
 > $$
-> d(i, j) + d(j, k) \geq d(i, k) 
+> d(i, j) + d(j, k) \geq d(i, k)
 > $$
 > Thus, traveling along the Euler circuit $EG$ from the depot and skiping the visited vertex, the routing distance $MST(I)$ must,
 > $$
-> 	\begin{equation}
+> \begin{equation}
 > 		MST(I) \leq l_e \leq 2OPT(I)
-> 	\end{equation} 
+> 	\end{equation}
 > $$
 >
 > Therefore, *MST* is a *2-approximation*. 
