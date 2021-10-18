@@ -20,7 +20,7 @@ For this instance, the output of *G-MPS* is,
 
 <img src="./figure/greedy.png" style="zoom:50%" />
 
-And obiviously, the optimal solution of **Instance 1** is:
+And obviously, the optimal solution of **Instance 1** is:
 
 <img src="./figure/optimal.png" style="zoom:50%" />
 
